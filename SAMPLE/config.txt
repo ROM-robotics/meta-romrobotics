@@ -1,0 +1,3 @@
+kernel=rom_robotics.img
+arm_64bit=1
+enable_uart=1
