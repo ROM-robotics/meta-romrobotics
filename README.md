@@ -1,5 +1,5 @@
-<h3> meta-rom </h3>   
-        <h4><b> meta-romrobotics</b> </h4>
+<h2> meta-rom </h2>   
+        <h3>meta-romrobotics</h3>
 	    <ol>
 		 <li><b>rom-base-image.bb</b></li>
 		    <ul>
@@ -11,5 +11,5 @@
 		    </ul>
 	        <li><b> next-image.bb<b></li>
 	    </ol>
-	<h4><b> meta-romrobotics-qt</b> </h4>
+	<h3> meta-romrobotics-qt</b> </h3>
    
