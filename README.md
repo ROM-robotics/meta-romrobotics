@@ -8,6 +8,7 @@
 			<li>password assigned(romrobotics) </li>
 			<li>static ip(192.168.1.10/24) assigned</li>
 			<li>uart enable</li>
+			<li>package management system (ipk) </li>
 		    </ul>
 	        <li><b> next-image.bb<b></li>
 	    </ol>
