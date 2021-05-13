@@ -9,7 +9,7 @@
 			<li>static ip(192.168.1.10/24) assigned လုပ်ထားသော်လည်းမရ ? </li>
 			<li>uart enable</li>
 			<li>package management system (ipk) </li>
-			<li> ဘာကြောင့်မှန်းမသိ display မရသေး </li>
+			<li> display / touch ok  </li>
 		</ul>
 	        
 	   
