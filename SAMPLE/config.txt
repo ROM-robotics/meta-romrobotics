@@ -3,11 +3,20 @@ arm_64bit=1
 enable_uart=1
 
 
-# for piTFT 2.8 #
+# for piTFT 2.8 / 3.5 / 7 inches #
 
-#dtparam=spi=on
-#dtparam=i2c1=on
-#dtparam=i2c_arm=on
-#dtoverlay=pitft35r, rotate=90,speed=32000000, fps=20
+dtparam=spi=on
+dtparam=i2c1=on
+dtparam=i2c_arm=on
+dtoverlay=pitft35r, rotate=90,speed=42000000, fps=20
+#dtoverlay=pitft28r, rotate=90,speed=42000000, fps=20
+#dtoverlay=rpi-ft5406	
 
-# end piTFT 2.8 #
+# Enable PITFT28r display
+#dtoverlay=pitft28-resistive,rotate=90,speed=32000000,txbuflen=32768
+# Enable PITFT35r display
+#dtoverlay=pitft35-resistive,rotate=90,speed=42000000,fps=20
+# Enable VC4 Graphics
+dtoverlay=vc4-fkms-v3d
+
+# end piTFT  #
