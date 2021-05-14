@@ -1,10 +1,16 @@
 <h2> meta-toolchain-qt5 </h2>   
-	<h3> conf/local.conf</h3>
-	<ul>
-       <li>DISTRO_FEATURES_remove="x11 wayland"</li>
-       <li>IMAGE_INSTALL_append_pn-rpi-basic-imge = "packagegroup-qt5-toolchain-target qt5-opengles2-test"</li>
-    </ul>
-
+	<p>
+		BBLAYERS ?= " \
+  /home/rom/Desktop/yocto/poky/meta \
+  /home/rom/Desktop/yocto/poky/meta-poky \
+  /home/rom/Desktop/yocto/poky/meta-yocto-bsp \
+  /home/rom/Desktop/yocto/layers/meta-raspberrypi \
+  /home/rom/Desktop/yocto/layers/meta-openembedded/meta-oe \
+  /home/rom/Desktop/yocto/layers/meta-openembedded/meta-python \
+  /home/rom/Desktop/yocto/layers/meta-openembedded/meta-multimedia \
+  /home/rom/Desktop/yocto/layers/meta-qt5 \
+  "
+</p>
 	        
 	   
 	
