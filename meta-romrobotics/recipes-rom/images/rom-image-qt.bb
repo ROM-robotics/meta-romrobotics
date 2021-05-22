@@ -13,9 +13,9 @@ IMAGE_FEATURES += " splash"
 IMAGE_INSTALL += "libstdc++ mtd-utils"
 IMAGE_INSTALL += "openssh openssl "
 
-IMAGE_INSTALL_append = "packagegroup-core-ssh-openssh openssh-sftp-server qtbase qtwebkit qtdeclarative \
-qtquickcontrols qtquickcontrols2 qtgraphicaleffects qtimageformats qtmultimedia qtserialport \
-qtquickcontrols-qmlplugins qtquickcontrols2-qmlplugins" 
+IMAGE_INSTALL_append = "packagegroup-core-ssh-openssh openssh-sftp-server "
+#qtbase qtwebkit qtdeclarative qtquickcontrols qtquickcontrols2 qtgraphicaleffects qtimageformats qtmultimedia qtserialport \
+#qtquickcontrols-qmlplugins qtquickcontrols2-qmlplugins" 
 
 PACKAGECONFIG[eglfs] = "-eglfs, -no-eglfs, drm"
 PACKAGECONFIG[gl] = "-opengl desktop, virtual/libgl"
@@ -32,6 +32,11 @@ PACKAGECONFIG_append = "sql-sqlite"
 QT_TOOLS = " \
     qtbase \
     qt5-env \
+    qtserialport \
+"
+
+QT_DEV_TOOLS = " \    
+    qtserialport-mkspecs \
 "
 
 FONTS = " \
@@ -40,8 +45,22 @@ FONTS = " \
     ttf-bitstream-vera \
 "
 
+TSLIB = " \
+    tslib \
+    tslib-conf \
+    tslib-calibrate \
+    tslib-tests \
+"
+
+TEST_APPS += " \
+    qcolorcheck-tools \
+    tspress-tools \
+"
 
 IMAGE_INSTALL += " \
-    ${FONTS} \
     ${QT_TOOLS} \
+    ${QT_DEV_TOOLS} \
+    ${FONTS} \
+    ${TSLIB} \
+    ${TEST_APPS} \
 "
