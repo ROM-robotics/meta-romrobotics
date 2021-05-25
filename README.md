@@ -18,8 +18,7 @@ export QT_QPA_PLATFORM=eglfs</li>
           <p> စိတ်ရှုပ် မခံချင်ဘူးဆိုရင်တော့ pi 4 အတွက် image ကို <a href="https://drive.google.com/file/d/1aa0ApRkoJTcht2sV-EEf85IU9aLzi4YY/view?usp=sharing"> ဒီမှာ </a> ဒေါင်းပါ။ </p>  
     <h3> to be continue </h3>
       <ul>   
-        <li> eglfs resolution ကျန် grid layout စမ်းသုံးရန်</li>
-        
+        <li> eglfs resolution ကျန် grid layout စမ်းသုံးရန်</li>        
       </ul>
       
         
