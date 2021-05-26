@@ -2,6 +2,7 @@ SUMMARY = "A Qt5 development image"
 
 require rom-image-qt.bb
 
+IMAGE_INSTALL_append = " raspi2fb"
 # for QT
 QT5_PKGS = " \
     qt3d \
