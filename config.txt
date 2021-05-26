@@ -1,0 +1,23 @@
+hdmi_force_hotplug=1
+
+dtparam=i2c_arm=on
+#dtparam=i2s=on
+dtparam=spi=on
+enable_uart=1
+
+dtparam=audio=on
+dtoverlay=waveshare35a
+#dtoverlay=ads7846,cs=1,penirq=17,penirq_pull=2,speed=1000000,keep_vref_on=1,swapxy=1,pmax=255,xohms=60,xmin=200,xmax=3900,ymin=200,ymax=3900
+hdmi_force_hotplug=1
+#max_usb_current=1
+hdmi_group=2
+hdmi_mode=1
+hdmi_mode=87
+hdmi_cvt 480 320 60 6 0 0 0
+hdmi_drive=2
+
+# Enable VC4 Graphics
+dtoverlay=vc4-fkms-v3d
+
+# Force arm in 64bit mode. See: https://github.com/raspberrypi/firmware/issues/1193.
+arm_64bit=1
