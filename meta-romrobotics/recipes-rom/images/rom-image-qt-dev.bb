@@ -2,8 +2,7 @@ SUMMARY = "A Qt5 development image"
 
 require rom-image-qt.bb
 
-
-
+# for QT
 QT5_PKGS = " \
     qt3d \
     qtcharts \
