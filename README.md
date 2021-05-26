@@ -1,6 +1,7 @@
 
 <h2> meta-rom </h2>   
     <h3>rom-image-qt.bb</h3>
+    <h3>rom-image-qt-dev.bb</h3>
       <ul>
         <li> Predefined users & password ( user=root, password=romrobotics; user=rom,password=robotics; )<b>OK</b></li>
         <li> Force to change password <b>OK</b></li>
