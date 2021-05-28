@@ -2,7 +2,7 @@
 
 # the other option is eglfs but it is currently not working
 # with the 5.4 kernel
-export QT_QPA_PLATFORM=eglfs
+
 
 # physical width and height units are mm
 
@@ -37,7 +37,8 @@ fi
 
 export PATH=${PATH}:/usr/bin/qt5
 
-export QT_QPA_PLATFORM=linuxfb:fb=/dev/fb1
+#export QT_QPA_PLATFORM=linuxfb:fb=/dev/fb1
+export QT_QPA_PLATFORM=eglfs
 export QT_QPA_EVDEV_TOUCHSCREEN_PARAMETERS=/dev/input/touchscreen0:rotate=90
 export QT_QPA_FB_TSLIB=1
 export TSLIB_FBDEVICE=/dev/fb1
