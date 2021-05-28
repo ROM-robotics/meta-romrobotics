@@ -25,7 +25,7 @@ export TSLIB_TSDEVICE=/dev/input/touchscreen0<br>
 </p>
 <p> /etc/profile ထဲမှာတော့ QT_QPA_PLATFORM=linuxfb ထည့်ပေးပါ။</p><br>
 <p> ဒီအချိန်မှာ $ ts_calibrate နဲ့ calibrate လုပ်လို့ရပါတယ်။ touchscreen အဆင်မပြေသေး။ </p><br><br>
-<h3>linuxfb အတွက် </h3>
+<h3>eglfs အတွက် </h3>
 <p> waveshare lcd 3.5 အတွက် config.txt မှာ  တို့ကိုရေးပါ။ <br>
 hdmi_force_hotplug=1 <br>
 hdmi_cvt=480 320 60<br>
