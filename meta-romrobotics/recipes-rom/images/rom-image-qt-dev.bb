@@ -19,6 +19,10 @@ QT5_PKGS = " \
     qtwebsockets-qmlplugins \
     qtvirtualkeyboard \
     qtxmlpatterns \
+    qtwebkit \
+    qtquickcontrols \
+    qtquickcontrols-qmlplugins \
+    qtquickcontrols2-qmlplugins \
 "
 QT5_DEV_PKGS = " \
     qt3d \
@@ -47,6 +51,10 @@ QT5_DEV_PKGS = " \
     qtvirtualkeyboard \
     qtxmlpatterns \
     qtxmlpatterns-mkspecs \
+    qtwebkit \
+    qtquickcontrols \
+    qtquickcontrols-qmlplugins \
+    qtquickcontrols2-qmlplugins \
 "
 
 TEST_APPS += " \
