@@ -19,7 +19,12 @@
 
 <h4> rom-noetic-robot</h4>
 - rom-noetic-robot ကို bitbake လုပ်ရတာတွင် opencv, pcl တို့ကို compile လုပ်သည်။ pcl lib များကို compile လုပ်ရာတွင် swap 5G ဖြင့် မအောင်မြင်ပါ။ swap 24G ပေးရာအောင်မြင်သည်။ ros meta package များဖွဲ့စည်းပုံကို ပုံတွင်ကြည့်ပါ။
+<br>
 <img src="images/map.png" />
+<br>
+- emulator ဖြင့် run ဖို့ဆို 
+$ cd build_dir/tmp/deploy/images/qeum_directory
+$ runqemu rom-noetic-robot-noetic-qemux86-64.qemuboot.conf 
 - mobile robot အတွက် အောက်ပါ package များသွင်းရန်လိုသည်။
 		- rplidar_ros
 		- map_server
@@ -32,50 +37,42 @@
 		- clear_costmap_recovery
 		- costmap_2D
 		- carrot_planner
+		- rplidar_ros
+		- သင့်ရဲ့ robot driver package
 
-	
-   
+<h5> လက်ရှိဖြည့်သွင်းထားသော package များ </h5>
+		IMAGE_INSTALL:append = " \
+    ros-core \
+    robot \
+    perception \
+    openslam-gmapping \
+    open-karto \
+    slam-gmapping \
+    slam-karto \
+    move-basic \
+    navigation \
+    robot-localization \
+    rosserial \
+    ros-control \
+    actionlib \
+    move-base-flex \
+    move-base-sequence \
+    slam-toolbox-msgs \
+    robot-navigation \
+    robot-localization \
+    robot-controllers \
+    amcl \
+    global-planner \
+    base-local-planner \
+    dwa-local-planner \
+    dwb-local-planner \
+    carrot-planner \
+"
+<h5> ထည့်ဖို့ကျန်တဲ့ package များ </h5>
+	- rplidar_ros
+	- slam_toolbox
+	- myrobot_driver
+	- myrobot_description
 
 
 
-This README file contains information on the contents of the meta-romrobotics layer.
-
-Please see the corresponding sections below for details.
-
-Dependencies
-============
-
-  URI: <first dependency>
-  branch: <branch name>
-
-  URI: <second dependency>
-  branch: <branch name>
-
-  .
-  .
-  .
-
-Patches
-=======
-
-Please submit any patches against the meta-romrobotics layer to the xxxx mailing list (xxxx@zzzz.org)
-and cc: the maintainer:
-
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
-
-Table of Contents
-=================
-
-  I. Adding the meta-romrobotics layer to your build
- II. Misc
-
-
-I. Adding the meta-romrobotics layer to your build
-=================================================
-
-Run 'bitbake-layers add-layer meta-romrobotics'
-
-II. Misc
-========
-
---- replace with specific information about the meta-romrobotics layer ---
