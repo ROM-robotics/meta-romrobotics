@@ -17,6 +17,22 @@
 	    <p>
 	    Yocto မှာ default အားဖြင့် systemd မဟုတ်ဘဲ init ဖြစ်တာကြောင့် /etc/init.d /etc/initab တို့ကို သိထားဖို့လိုပါမယ်။ init ကို မသုံးရင်လည်း systemd အသုံးပြုနိုင်ပါတယ်။ ros node တွေ auto start ဖြစ်အောင် တခြားနည်းလမ်းတွေဖြစ်တဲ့ cron တို့ ros package ထဲက auto start package တွေလဲအသုံးပြုနိုင်ပေမဲ့ ယခု yocto မှာမို့ ကန့်သတ်ချက်တွေရှိနိုင်ပြီး စမ်းသပ်ပြီးမှသာ အသုံးပြုနိုင်ပါမယ်။ အခု init နည်းလမ်းကတော့ ရိုးရှင်းပြီး အခြေခံကျပါတယ်။ init script ရေးဖို့အတွက် ROM ROBOTICS မှထုတ်ဝေမည့် " အဆင့်မြင့် ROBOT " စာအုပ်  embedded linux အခန်း  ကို ဖတ်ပါ။</p>
 
+<h4> rom-noetic-robot</h4>
+- rom-noetic-robot ကို bitbake လုပ်ရတာတွင် opencv, pcl တို့ကို compile လုပ်သည်။ pcl lib များကို compile လုပ်ရာတွင် swap 5G ဖြင့် မအောင်မြင်ပါ။ swap 24G ပေးရာအောင်မြင်သည်။ ros meta package များဖွဲ့စည်းပုံကို ပုံတွင်ကြည့်ပါ။
+<img src="images/map.png" />
+- mobile robot အတွက် အောက်ပါ package များသွင်းရန်လိုသည်။
+		- rplidar_ros
+		- map_server
+		- slam_gmapping
+		- amcl
+		- move_base
+		- global_planner
+		- local_planner
+		- rotate_recovery
+		- clear_costmap_recovery
+		- costmap_2D
+		- carrot_planner
+
 	
    
 

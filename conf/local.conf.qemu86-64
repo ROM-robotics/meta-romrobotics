@@ -1,0 +1,81 @@
+MACHINE ?= "qemux86-64"
+
+
+DISTRO ?= "poky"
+
+#PACKAGE_CLASSES ?= "package_rpm"
+
+
+EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
+
+
+USER_CLASSES ?= "buildstats image-mklibs image-prelink"
+
+
+PATCHRESOLVE = "noop"
+
+
+BB_DISKMON_DIRS ??= "\
+    STOPTASKS,${TMPDIR},1G,100K \
+    STOPTASKS,${DL_DIR},1G,100K \
+    STOPTASKS,${SSTATE_DIR},1G,100K \
+    STOPTASKS,/tmp,100M,100K \
+    ABORT,${TMPDIR},100M,1K \
+    ABORT,${DL_DIR},100M,1K \
+    ABORT,${SSTATE_DIR},100M,1K \
+    ABORT,/tmp,10M,1K"
+
+
+PACKAGECONFIG_append_pn-qemu-system-native = " sdl"
+
+
+CONF_VERSION = "1"
+
+###########################################################################
+# ROS-ADDITIONS-BEGIN
+
+ROS_LOCAL_CONF_SETTINGS_VERSION := "2.2"
+DISTRO ?= "${MCF_DISTRO}" 
+
+ROS_DISTRO_VERSION_APPEND ?= "+${MCF_OPENEMBEDDED_VERSION}"
+ROS_WEBOS_DISTRO_VERSION_APPEND ?= ".${MCF_WEBOS_BUILD_NUMBER}"
+ROS_OE_RELEASE_SERIES_SUFFIX ?= "-${ROS_OE_RELEASE_SERIES}"
+
+ROS_COMMON_ARTIFACTS ?= "/home/robot/Desktop/yocto/build/emulator/rom_cache/"
+
+DL_DIR ?= "${ROS_COMMON_ARTIFACTS}/downloads"
+SSTATE_DIR ?= "${ROS_COMMON_ARTIFACTS}/sstate-cache${ROS_OE_RELEASE_SERIES_SUFFIX}"
+TMPDIR ?= "${ROS_COMMON_ARTIFACTS}/BUILD-${DISTRO}-${ROS_DISTRO}${ROS_OE_RELEASE_SERIES_SUFFIX}"
+TCLIBCAPPEND := ""
+#BB_NUMBER_THREADS ?= "${@min(int(bb.utils.cpu_count()), 20)}"
+#PARALLEL_MAKE ?= "-j ${BB_NUMBER_THREADS}"
+INHERIT += "rm_work"
+
+# ROS-ADDITIONS-END
+
+
+#*********  ROM ROBOTICS မှ စတင်ပြင်ဆင်သော အပိုင်း ဖြစ်ပါသည်။  *********#
+#PACKAGE_INSTALL_append = " psplash-bar"
+#SPLASH = "psplash-bar"
+
+EXTRA_IMAGE_FEATURES += "package-management"
+PACKAGE_CLASSES ?= "package_ipk"
+
+BB_NUMBER_THREADS = "6"
+PARALLEL_MAKE = "-j 6"
+
+#IMAGE_FSTYPES = "tar.xz ext3 rpi-sdimg"
+
+LICENSE_FLAGSWHITELIST = "commercial"
+
+INHERIT += "extrausers"
+EXTRA_USERS_PARAMS = "useradd rom; \
+					  usermod -p 'robotics' rom; \
+					  usermod -a -G sudo rom; \
+					  usermod -P 1234 root; \
+					  "
+INHERIT += "chageusers"
+CHAGE_USERS_PARAMS = "chage -d0 root; "
+
+#*************  ROM ROBOTICS မှ ပြင်ဆင်ပြီးဆုံးသည်။  ****************#
+
